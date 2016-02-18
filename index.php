@@ -29,9 +29,14 @@
         }
     </style>
     <script>
-        function delete(id){
-            alert(id);
-        } 
+        function deleteInfo(id){
+            if(window.confirm('确认删除吗?')){
+               $.post('./delete.php',{id:id},function(res){
+                    window.location = './index.php';
+            }); 
+            }
+            
+        }
     </script>
 </head>
 <body>

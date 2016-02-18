@@ -32,7 +32,7 @@
 	    					echo "<td>" .$row["FTPAddress"] ."</td>";
 	    					echo "<td>" .$row["FTPAccount"] ."</td>";
 	    					echo "<td>" .$row["FTPPassword"] ."</td>";
-	    					echo "<td><a class='btn btn-info' href='./show.php?id=" .$row["Id"] ."'>详情</a> <a class='btn btn-warning' href='./modify.php?id=" .$row["Id"] ."'>修改</a> <a class='btn btn-danger btn-delete' onclick=\"delete(". $row["Id"] .");\" href='javascript:void(0);'>删除</a></td></tr>";
+	    					echo "<td><a class='btn btn-info' href='./show.php?id=" .$row["Id"] ."'>详情</a> <a class='btn btn-warning' href='./modify.php?id=" .$row["Id"] ."'>修改</a> <a class='btn btn-danger btn-delete' onclick=\"deleteInfo(". $row["Id"] .");\" href='javascript:void(0);'>删除</a></td></tr>";
 	    			}
 	    		}
 	    	?>
