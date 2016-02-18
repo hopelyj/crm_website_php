@@ -28,6 +28,11 @@
             }
         }
     </style>
+    <script>
+        function delete(id){
+            alert(id);
+        } 
+    </script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

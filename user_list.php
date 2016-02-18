@@ -1,4 +1,12 @@
-
+    <?php
+        //获得页码
+	    		$page = isset($_GET['page'])?$_GET['page']:1;
+	    		$index = ($page -1) * 20;
+	    		$config = require './config.php';
+	    		require './webinfo.class.php';
+	    		$info = new webinfo($config);
+	    		$_list = $info->getInfoList($index);
+    ?>
 	<a href="./add.html" class="btn btn-success btn-large btn-block " style="margin-bottom:20px;">+新增信息</a>
 	<table class="table table-bordered table-hover">
 	    <thead>
@@ -14,13 +22,6 @@
 	    </thead>
 	    <tbody>
 	    	<?php
-    			//获得页码
-	    		$page = isset($_GET['page'])?$_GET['page']:1;
-	    		$index = ($page -1) * 20;
-	    		$config = require './config.php';
-	    		require './webinfo.class.php';
-	    		$info = new webinfo($config);
-	    		$_list = $info->getInfoList($index);
 	    		if($_list!=null)
 	    		{
 	    			foreach ($_list as $row) {
@@ -31,7 +32,7 @@
 	    					echo "<td>" .$row["FTPAddress"] ."</td>";
 	    					echo "<td>" .$row["FTPAccount"] ."</td>";
 	    					echo "<td>" .$row["FTPPassword"] ."</td>";
-	    					echo "<td><a class='btn btn-info' href='./show.php?id=" .$row["Id"] ."'>详情</a> <a class='btn btn-warning' href='./modify.php?id=" .$row["Id"] ."'>修改</a></td></tr>";
+	    					echo "<td><a class='btn btn-info' href='./show.php?id=" .$row["Id"] ."'>详情</a> <a class='btn btn-warning' href='./modify.php?id=" .$row["Id"] ."'>修改</a> <a class='btn btn-danger btn-delete' onclick=\"delete(". $row["Id"] .");\" href='javascript:void(0);'>删除</a></td></tr>";
 	    			}
 	    		}
 	    	?>
