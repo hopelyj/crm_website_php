@@ -2,8 +2,8 @@
         //获得页码
 	    		$page = isset($_GET['page'])?$_GET['page']:1;
 	    		$index = ($page -1) * 20;
-	    		$config = require './config.php';
-	    		require './webinfo.class.php';
+	    		$config = require_once './config.php';
+	    		require_once './webinfo.class.php';
 	    		$info = new webinfo($config);
 	    		$_list = $info->getInfoList($index);
     ?>
