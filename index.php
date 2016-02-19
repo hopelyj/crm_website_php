@@ -85,10 +85,12 @@
             	?>
             </div>
             <div class="span9">
-                <?php
-                    $page = require './pagination.php';
-                    echo $page;
-                ?>
+                <div class="text-center pagination">
+                    <?php
+                        $page = require './pagination.php';
+                        echo $page;
+                    ?>
+                </div>
             </div>
         </div><!--/row-->
         
